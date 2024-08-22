@@ -13,6 +13,6 @@ namespace Post.Common.Events
         {
         }
 
-        public DateTime Message { get; set; }
+        public string Message { get; set; }
     }
 }
