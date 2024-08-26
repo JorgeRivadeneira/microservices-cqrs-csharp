@@ -24,7 +24,7 @@ namespace CQRS.Core.Domain
             return _changes;
         }
 
-        public void MarkChangesUncommited()
+        public void MarkChangesAsCommited()
         {
             _changes.Clear();
         }
