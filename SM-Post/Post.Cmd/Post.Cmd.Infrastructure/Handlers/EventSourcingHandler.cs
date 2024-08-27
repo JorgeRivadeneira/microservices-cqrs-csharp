@@ -31,7 +31,7 @@ namespace Post.Cmd.Infrastructure.Handlers
             return aggregate;
         }
 
-        public async Task SavedAsync(AggregateRoot aggregate)
+        public async Task SaveAsync(AggregateRoot aggregate)
         {
             await _eventStore.SaveEventAsync(aggregate.Id, aggregate.GetUncommitedChanges(), aggregate.Version);
             aggregate.MarkChangesAsCommited();
