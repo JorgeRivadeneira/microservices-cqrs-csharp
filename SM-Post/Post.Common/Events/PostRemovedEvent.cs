@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace Post.Common.Events
 {
-    public class PostRemoveEvent : BaseEvent
+    public class PostRemovedEvent : BaseEvent
     {
-        public PostRemoveEvent() : base(nameof(PostRemoveEvent))
+        public PostRemovedEvent() : base(nameof(PostRemovedEvent))
         {
         }
     }

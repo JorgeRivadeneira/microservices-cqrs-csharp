@@ -147,14 +147,14 @@ namespace Post.Cmd.Domain.Aggregates
                 throw new InvalidOperationException("You are not allowed to remove a comment that was made by another user");
             }
 
-            RaiseEvent(new CommentRemoveEvent
+            RaiseEvent(new CommentRemovedEvent
             {
                 Id = _id,
                 CommentId = commentId,
             });
         }
 
-        public void Apply(CommentRemoveEvent @event)
+        public void Apply(CommentRemovedEvent @event)
         {
             _id = @event.Id;
             _comments.Remove(@event.CommentId);
@@ -172,13 +172,13 @@ namespace Post.Cmd.Domain.Aggregates
                 throw new InvalidOperationException("You are not allowed to delete a post that was made by someone else!");
             }
 
-            RaiseEvent(new PostRemoveEvent
+            RaiseEvent(new PostRemovedEvent
             {
                 Id = _id,
             });
         }
 
-        public void Apply(PostRemoveEvent @event)
+        public void Apply(PostRemovedEvent @event)
         {
             _id = @event.Id;
             _active = false;
